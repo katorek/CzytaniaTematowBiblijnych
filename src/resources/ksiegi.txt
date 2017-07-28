@@ -1,0 +1,73 @@
+Rdz;Ks. Rodzaju;ST
+Wj;Ks. Wyjścia;ST
+Kpł;Ks. Kapłańska;ST
+Lb;Ks. Liczb;ST
+Pwt;Ks. Powtórzonego Prawa;ST
+Joz;Ks. Jozuego;ST
+Sdz;Ks. Sędziów;ST
+Rt;Ks. Rut;ST
+Lm;Lamentacje;ST
+1 Sm;1 Ks. Samuela;ST
+2 Sm;2 Ks. Samuela;ST
+1 Krl;1 Ks. Królewska;ST
+2 Krl;2 Ks. Królewska;ST
+1 Krn;1 Ks. Kronik;ST
+2 Krn;2 Ks. Kronik;ST
+Ezd;Ks. Ezdrasza;ST
+Ne;Ks. Nehemiasza;ST
+Tb;Ks. Tobiasza;ST
+Jdt;Ks. Judyty;ST
+Est;Ks. Estery;ST
+1 Mch;1 Ks. Machabejska;ST
+2 Mch;2 Ks. Machabejska;ST
+Hi;Ks. Hioba;ST
+Ps;Ks. Psalmów;ST
+Prz;Ks. Przysłów;ST
+Koh;Ks. Koheleta;ST
+Pnp;Pieśń nad Pieśniami;ST
+Mdr;Ks. Mądrości;ST
+Syr;Mądrość Syracha;ST
+Iz;Ks. Izajasza ;ST
+Jr;Ks. Jeremiasza;ST
+Ba;Ks. Barucha;ST
+Ez;Ks. Ezechiela;ST
+Dn;Ks. Daniela;ST
+Oz;Ks. Ozeasza;ST
+Jl;Ks. Joela;ST
+Am;Ks. Amosa;ST
+Ab; Ks. Abdiasza;ST
+Jon;Ks. Jonasza;ST
+Mi;Ks. Micheasza;ST
+Na;Ks. Nahuma;ST
+Ha;Ks. Habakuka;ST
+So;Ks. Sofoniasza;ST
+Ag;Ks. Aggeusza;ST
+Za;Ks. Zachariasza;ST
+Ml;Ks. Malachiasza;ST
+Mt;Ew. wg św. Mateusza;NT
+Mk;Ew. wg św. Marka;NT
+Łk;Ew. wg św. Łukasza;NT
+J;Ew. wg św. Jana;NT
+Dz;Dzieje Apostolskie;NT
+Rz;List do Rzymian;NT
+1 Kor;1 List do Koryntian;NT
+2 Kor;2 List do Koryntian;NT
+Ga;List do Galatów	1 ;NT
+Ef;List do Efezjan	2 ;NT
+Flp;List do Filipian;NT
+Kol;List do Kolosan;NT
+1 Tes;1 List do Tesaloniczan;NT
+2 Tes;2 List do Tesaloniczan;NT
+1 Tm;1 List do Tymoteusza;NT
+2 Tm;2 List do Tymoteusza;NT
+Tt;List do Tytusa;NT
+Flm;List do Filemona;NT
+Hbr;List do Hebrajczyków;NT
+Jk;List św. Jakuba;NT
+1 P;1 List św. Piotra;NT
+2 P;2 List św. Piotra;NT
+1 J;1 List św. Jana;NT
+2 J;2 List św. Jana;NT
+3 J;3 List św. Jana;NT
+Jud;List św. Judy;NT
+Ap;Apokalipsa św. Jana;NT

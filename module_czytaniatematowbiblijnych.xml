@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_czytaniatematowbiblijnych" default="compile.module.czytaniatematowbiblijnych">
+  <dirname property="module.czytaniatematowbiblijnych.basedir" file="${ant.file.module_czytaniatematowbiblijnych}"/>
+  
+  <property name="module.jdk.home.czytaniatematowbiblijnych" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.czytaniatematowbiblijnych" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.czytaniatematowbiblijnych" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.czytaniatematowbiblijnych" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="czytaniatematowbiblijnych.output.dir" value="${module.czytaniatematowbiblijnych.basedir}/target/classes"/>
+  <property name="czytaniatematowbiblijnych.testoutput.dir" value="${module.czytaniatematowbiblijnych.basedir}/target/test-classes"/>
+  
+  <path id="czytaniatematowbiblijnych.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="czytaniatematowbiblijnych.module.production.classpath">
+    <path refid="${module.jdk.classpath.czytaniatematowbiblijnych}"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.6.classpath"/>
+  </path>
+  
+  <path id="czytaniatematowbiblijnych.runtime.production.module.classpath">
+    <pathelement location="${czytaniatematowbiblijnych.output.dir}"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.6.classpath"/>
+  </path>
+  
+  <path id="czytaniatematowbiblijnych.module.classpath">
+    <path refid="${module.jdk.classpath.czytaniatematowbiblijnych}"/>
+    <pathelement location="${czytaniatematowbiblijnych.output.dir}"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.6.classpath"/>
+  </path>
+  
+  <path id="czytaniatematowbiblijnych.runtime.module.classpath">
+    <pathelement location="${czytaniatematowbiblijnych.testoutput.dir}"/>
+    <pathelement location="${czytaniatematowbiblijnych.output.dir}"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.6.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.czytaniatematowbiblijnych">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.czytaniatematowbiblijnych">
+    <patternset refid="excluded.from.module.czytaniatematowbiblijnych"/>
+  </patternset>
+  
+  <path id="czytaniatematowbiblijnych.module.sourcepath">
+    <dirset dir="${module.czytaniatematowbiblijnych.basedir}">
+      <include name="src/resources"/>
+      <include name="src/main/resources"/>
+      <include name="src/main"/>
+    </dirset>
+  </path>
+  
+  <path id="czytaniatematowbiblijnych.module.test.sourcepath">
+    <dirset dir="${module.czytaniatematowbiblijnych.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.czytaniatematowbiblijnych" depends="compile.module.czytaniatematowbiblijnych.production,compile.module.czytaniatematowbiblijnych.tests" description="Compile module CzytaniaTematowBiblijnych"/>
+  
+  <target name="compile.module.czytaniatematowbiblijnych.production" depends="register.custom.compilers" description="Compile module CzytaniaTematowBiblijnych; production classes">
+    <mkdir dir="${czytaniatematowbiblijnych.output.dir}"/>
+    <javac2 destdir="${czytaniatematowbiblijnych.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.czytaniatematowbiblijnych}/javac">
+      <compilerarg line="${compiler.args.czytaniatematowbiblijnych}"/>
+      <bootclasspath refid="czytaniatematowbiblijnych.module.bootclasspath"/>
+      <classpath refid="czytaniatematowbiblijnych.module.production.classpath"/>
+      <src refid="czytaniatematowbiblijnych.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.czytaniatematowbiblijnych"/>
+    </javac2>
+    
+    <copy todir="${czytaniatematowbiblijnych.output.dir}">
+      <fileset dir="${module.czytaniatematowbiblijnych.basedir}/src/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.czytaniatematowbiblijnych.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.czytaniatematowbiblijnych.basedir}/src/main">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.czytaniatematowbiblijnych.tests" depends="register.custom.compilers,compile.module.czytaniatematowbiblijnych.production" description="compile module CzytaniaTematowBiblijnych; test classes" unless="skip.tests">
+    <mkdir dir="${czytaniatematowbiblijnych.testoutput.dir}"/>
+    <javac2 destdir="${czytaniatematowbiblijnych.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.czytaniatematowbiblijnych}/javac">
+      <compilerarg line="${compiler.args.czytaniatematowbiblijnych}"/>
+      <bootclasspath refid="czytaniatematowbiblijnych.module.bootclasspath"/>
+      <classpath refid="czytaniatematowbiblijnych.module.classpath"/>
+      <src refid="czytaniatematowbiblijnych.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.czytaniatematowbiblijnych"/>
+    </javac2>
+    
+    <copy todir="${czytaniatematowbiblijnych.testoutput.dir}">
+      <fileset dir="${module.czytaniatematowbiblijnych.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.czytaniatematowbiblijnych" description="cleanup module">
+    <delete dir="${czytaniatematowbiblijnych.output.dir}"/>
+    <delete dir="${czytaniatematowbiblijnych.testoutput.dir}"/>
+  </target>
+</project>
