@@ -1,3 +1,5 @@
+package engine;
+
 import engine.fxml.AppController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +28,7 @@ public class Main extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("window.fxml"));
 
         FXMLLoader loader = new FXMLLoader();
-        Parent root = FXMLLoader.load(getClass().getResource("window.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
 
         AppController appController = loader.getController();
 

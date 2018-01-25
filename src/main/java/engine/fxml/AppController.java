@@ -171,7 +171,7 @@ public class AppController implements Initializable {
     }
 
     private String text(ListView<String> list) {
-        if(list==null || list.getItems().size()<1) return "";
+        if(list==null || list.getItems().size()<1 || list.getSelectionModel().getSelectedItem() == null) return "";
         String temat = list.getSelectionModel().getSelectedItem();
         return temat + "\n\n" + tematyHashMap.get(temat).toString2();
     }
